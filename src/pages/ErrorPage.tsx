@@ -1,35 +1,53 @@
-import styled from '@emotion/styled';
+import { Box, styled, Typography } from '@mui/material';
 import React from 'react';
 
-const ErrorPageStyles = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: #dfe6e9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  .title {
-    font-size: 3.6rem;
+const ErrorPageBox = styled(Box)(({ theme }) => ({
+  width: '100vw',
+  height: '100vh',
+  backgroundColor: theme.customColors.secondary,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: '3rem',
+  '& > .title': {
+    fontSize: '3.6rem'
+  },
+  '& > .content': {
+    fontSize: '1.2rem'
+  },
+  '& > .status': {
+    fontSize: '1rem',
+    fontStyle: 'italic',
+    color: theme.customColors.tertiary
   }
-  .content {
-    font-size: 1.2rem;
-  }
-  .status {
-    font-size: 1rem;
-    font-style: italic;
-    color: #636e72;
-  }
-`;
+}));
 
 const ErrorPage: React.FC = () => {
   return (
-    <ErrorPageStyles>
-      <h1 className="title">Oops!</h1>
-      <p className="content">Sorry, an unexpected error has occured</p>
-      <span className="status">Not found</span>
-    </ErrorPageStyles>
+    <ErrorPageBox>
+      <Typography
+        className="title"
+        variant="h2"
+        component="h1"
+      >
+        Oops!
+      </Typography>
+      <Typography
+        className="content"
+        variant="body1"
+        component="p"
+      >
+        Sorry, an unexpected error has occured
+      </Typography>
+      <Typography
+        className="status"
+        variant="body2"
+        component="span"
+      >
+        Not found
+      </Typography>
+    </ErrorPageBox>
   );
 };
 
