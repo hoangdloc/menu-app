@@ -3,9 +3,10 @@ import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 import LoadingScreen from '../pages/LoadingScreen';
 
-const DashboardPage = lazy(async () => await import('../pages/DashboardPage'));
-const MenuPage = lazy(async () => await import('../pages/MenuPage'));
-const ErrorPage = lazy(async () => await import('../pages/ErrorPage'));
+const AdminLayout = lazy(async () => await import('../layouts/admin/AdminLayout'));
+const DashboardPage = lazy(async () => await import('./../modules/dashboard/DashboardPage'));
+const MenuPage = lazy(async () => await import('./../pages/MenuPage'));
+const ErrorPage = lazy(async () => await import('./../pages/ErrorPage'));
 
 const AppWrapper: React.FC = () => {
   return (
@@ -26,10 +27,19 @@ export default createBrowserRouter([
       },
       {
         path: '/admin',
+        element: <AdminLayout />,
         children: [
           {
             index: true,
             element: <DashboardPage />
+          },
+          {
+            path: 'manage-ingredients',
+            element: <div>Not done yet!</div>
+          },
+          {
+            path: 'settings',
+            element: <div>Just toggle dark mode!</div>
           }
         ]
       }

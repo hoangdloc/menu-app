@@ -4,7 +4,7 @@ import React from 'react';
 const ErrorPageBox = styled(Box)(({ theme }) => ({
   width: '100vw',
   height: '100vh',
-  backgroundColor: theme.customColors.secondary,
+  backgroundColor: theme.customColors.bgColorPrimary,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -19,7 +19,7 @@ const ErrorPageBox = styled(Box)(({ theme }) => ({
   '& > .status': {
     fontSize: '1rem',
     fontStyle: 'italic',
-    color: theme.customColors.tertiary
+    color: theme.customColors.textColorSecondary
   }
 }));
 
