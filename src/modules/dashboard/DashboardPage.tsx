@@ -4,7 +4,7 @@ import React from 'react';
 const DashboardPage: React.FC = () => {
   return (
     <Box>
-      <Button variant="contained">Contained</Button>
+      <Button variant="contained">Toggle Dish Info</Button>
     </Box>
   );
 };

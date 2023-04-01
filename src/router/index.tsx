@@ -3,7 +3,7 @@ import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 import LoadingScreen from '../pages/LoadingScreen';
 
-const AdminLayout = lazy(async () => await import('../layouts/admin/AdminLayout'));
+const AdminLayout = lazy(async () => await import('../modules/dashboard/components/layouts'));
 const DashboardPage = lazy(async () => await import('./../modules/dashboard/DashboardPage'));
 const MenuPage = lazy(async () => await import('./../pages/MenuPage'));
 const ErrorPage = lazy(async () => await import('./../pages/ErrorPage'));
