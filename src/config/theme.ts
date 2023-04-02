@@ -19,6 +19,6 @@ export const theme = createTheme({
       primary: grey[800],
       secondary: grey[700]
     },
-    mode: 'dark'
+    mode: 'light'
   }
 });

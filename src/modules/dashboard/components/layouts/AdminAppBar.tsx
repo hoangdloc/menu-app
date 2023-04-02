@@ -72,7 +72,7 @@ const AdminAppBar: React.FC<AdminAppBarProps> = ({
             alignItems: 'center',
             marginRight: 2,
             justifyContent: 'space-between',
-            ...(open && { paddingLeft: 2, paddingRight: 2 })
+            ...(open && { marginLeft: 2 })
           }}
         >
           <Stack>

@@ -1,10 +1,12 @@
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
+
+import DishCard from './components/dishes/DishCard';
 
 const DashboardPage: React.FC = () => {
   return (
     <Box>
-      <Button variant="contained">Toggle Dish Info</Button>
+      <DishCard />
     </Box>
   );
 };
