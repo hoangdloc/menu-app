@@ -15,10 +15,10 @@ export const theme = createTheme({
       dark: orange[800],
       contrastText: grey[50]
     },
-    text: {
-      primary: grey[800],
-      secondary: grey[700]
-    },
+    // text: {
+    //   primary: grey[800],
+    //   secondary: grey[700]
+    // },
     mode: 'light'
   }
 });
