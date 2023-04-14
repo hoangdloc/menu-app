@@ -1,13 +1,26 @@
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import React from 'react';
 
-import DishCard from './components/dishes/DishCard';
+import { DishCard } from './components/dishes';
 
 const DashboardPage: React.FC = () => {
-  console.log(import.meta.env.FIREBASE_API_KEY);
   return (
     <Box>
-      <DishCard />
+      <Grid
+        container
+        rowSpacing={4}
+        columnSpacing={2}
+      >
+        <Grid
+          item
+          lg={3}
+          md={4}
+          sm={6}
+          xs={12}
+        >
+          <DishCard />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

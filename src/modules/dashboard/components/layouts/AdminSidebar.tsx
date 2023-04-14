@@ -69,8 +69,8 @@ const navLinkDataTop = [
   },
   {
     key: v4(),
-    title: 'Manage Ingredients',
-    url: 'manage-ingredients',
+    title: 'Manage Dishes',
+    url: 'manage-dishes',
     icon: <MenuBookIcon />
   }
 ];

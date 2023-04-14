@@ -34,7 +34,7 @@ export default createBrowserRouter([
             element: <DashboardPage />
           },
           {
-            path: 'manage-ingredients',
+            path: 'manage-dishes',
             element: <div>Not done yet!</div>
           },
           {
