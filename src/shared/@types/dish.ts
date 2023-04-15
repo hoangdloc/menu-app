@@ -7,17 +7,32 @@ export enum DishType {
   DESSERT = 'Dessert'
 }
 
+export enum IngredientType {
+  VEGETABLES = 'vegetables'
+}
+
+export interface Ingredient {
+  id: number
+  name: string
+  type: IngredientType
+  createdAt?: Date
+}
+
 export interface Dish {
   id: string
   name: string
   dishType: DishType
+  cookingTime: number
   price: number
   priceDiscount: number
   servings: number
   slug: string
   thumbnail: string
   description: string
-  image?: string[]
-  createdDate?: Date
-  updatedDate?: Date
+  ratingsQuantity: number
+  ratingsAverage: number
+  ingredients: Array<Omit<Ingredient, 'createdAt'>>
+  image: string[]
+  createdAt?: Date
+  updatedAt?: Date
 }

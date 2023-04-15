@@ -1,9 +1,13 @@
 import { Box, Grid } from '@mui/material';
 import React from 'react';
 
+import { useFetchDishesQuery } from '../../store/dish/dishService';
 import { DishCard } from './components/dishes';
 
 const DashboardPage: React.FC = () => {
+  const { data } = useFetchDishesQuery();
+  console.log(data);
+
   return (
     <Box>
       <Grid
