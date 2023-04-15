@@ -1,18 +1,12 @@
-import createSagaMiddleware from '@redux-saga/core';
 import { configureStore } from '@reduxjs/toolkit';
 
-import { reducer } from './reducer';
-import rootSaga from './rootSaga';
-
-const sagaMiddleware = createSagaMiddleware();
+import dishSlice from './dish/dishSlice';
 
 export const store = configureStore({
-  reducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(sagaMiddleware)
+  reducer: {
+    dish: dishSlice
+  }
 });
-
-sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

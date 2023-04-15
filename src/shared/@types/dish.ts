@@ -8,6 +8,7 @@ export enum DishType {
 }
 
 export interface Dish {
+  id: string
   name: string
   dishType: DishType
   price: number
