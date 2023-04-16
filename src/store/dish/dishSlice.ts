@@ -3,13 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { Dish } from '../../shared/@types/dish';
 
 interface IDishState {
-  dishes: Dish[]
-  loading: boolean
+  currentDish: Dish | null
 }
 
 const initialState: IDishState = {
-  dishes: [],
-  loading: false
+  currentDish: null
 };
 
 export const dishSlice = createSlice({

@@ -3,9 +3,10 @@ import React from 'react';
 
 import { useFetchDishesQuery } from '../../store/dish/dishService';
 import { DishCard } from './components/dishes';
+import DishCardSkeleton from './components/dishes/DishCardSkeleton';
 
 const DashboardPage: React.FC = () => {
-  const { data } = useFetchDishesQuery();
+  const { data, isFetching } = useFetchDishesQuery();
   console.log(data);
 
   return (
@@ -22,7 +23,7 @@ const DashboardPage: React.FC = () => {
           sm={6}
           xs={12}
         >
-          <DishCard />
+          {isFetching ? <DishCardSkeleton /> : <DishCard />}
         </Grid>
       </Grid>
     </Box>
