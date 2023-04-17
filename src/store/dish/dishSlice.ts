@@ -13,7 +13,12 @@ const initialState: IDishState = {
 export const dishSlice = createSlice({
   name: 'dish',
   initialState,
-  reducers: {}
+  reducers: {
+    setCurrentDish: (state, action) => {
+      state.currentDish = action.payload;
+    }
+  }
 });
 
+export const { setCurrentDish } = dishSlice.actions;
 export default dishSlice.reducer;

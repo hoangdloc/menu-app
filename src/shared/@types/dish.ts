@@ -32,7 +32,7 @@ export interface Dish {
   ratingsQuantity: number
   ratingsAverage: number
   ingredients: Array<Omit<Ingredient, 'createdAt'>>
-  image: string[]
+  images: string[]
   createdAt?: Date
   updatedAt?: Date
 }

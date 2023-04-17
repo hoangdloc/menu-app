@@ -6,16 +6,36 @@ import {
   Typography
 } from '@mui/material';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-const DishCard: React.FC = () => {
+import { Dish } from '../../../../shared/@types/dish';
+import { setCurrentDish } from '../../../../store/dish/dishSlice';
+
+interface DishCardProps {
+  dishData: Dish
+}
+
+const DishCard: React.FC<DishCardProps> = (props) => {
+  const { dishData } = props;
+  const dispatch = useDispatch();
+
+  const handleSetCurrentDish = (dish: Dish): void => {
+    dispatch(setCurrentDish(dish));
+  };
+
   return (
-    <Card sx={{ maxWidth: 275, borderRadius: '0.6rem' }}>
+    <Card
+      onClick={() => {
+        handleSetCurrentDish(dishData);
+      }}
+      sx={{ maxWidth: 275, borderRadius: '0.6rem' }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           height="158"
-          image="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80"
-          alt="Mock dish"
+          image={dishData.thumbnail}
+          alt={dishData.name}
         />
         <CardContent>
           <Typography
@@ -25,7 +45,7 @@ const DishCard: React.FC = () => {
             gutterBottom
             align="center"
           >
-            Salad
+            {dishData.name}
           </Typography>
           <Typography
             variant="body2"
@@ -33,15 +53,14 @@ const DishCard: React.FC = () => {
             align="center"
             gutterBottom
           >
-            $2.99
+            ${dishData.price}
           </Typography>
           <Typography
             variant="caption"
             component="p"
             align="center"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-            quos.
+            {dishData.description}
           </Typography>
         </CardContent>
       </CardActionArea>

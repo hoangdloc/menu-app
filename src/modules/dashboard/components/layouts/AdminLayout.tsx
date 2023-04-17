@@ -2,7 +2,7 @@ import { Box, CssBaseline } from '@mui/material';
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import { DishInfoDrawer, DishStatisticsDrawer } from '../dishes';
+import { DishInfoDrawer } from '../dishes';
 import AdminAppBar from './AdminAppBar';
 import AdminDrawHeader from './AdminDrawHeader';
 import AdminSidebar from './AdminSidebar';
@@ -37,8 +37,7 @@ const DashboardLayout: React.FC = () => {
         <AdminDrawHeader />
         <Outlet />
       </Box>
-      {pathname === '/admin' ? <DishStatisticsDrawer /> : null}
-      {pathname === '/admin/manage-dishes' ? <DishInfoDrawer /> : null}
+      {pathname === '/admin' ? <DishInfoDrawer /> : null}
     </Box>
   );
 };

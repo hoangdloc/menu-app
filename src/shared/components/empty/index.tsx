@@ -20,7 +20,12 @@ interface MyEmptyProps {
 }
 
 const MyEmpty: React.FC<MyEmptyProps> = ({
-  icon = <FolderOffIcon fontSize='large' sx={{ width: 30 }} />,
+  icon = (
+    <FolderOffIcon
+      fontSize="large"
+      sx={{ width: 30 }}
+    />
+  ),
   description = 'No data'
 }) => {
   return (

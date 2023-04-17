@@ -8,6 +8,7 @@ export const dishApi = createApi({
   reducerPath: 'dishApi',
   tagTypes: ['Dishes'],
   baseQuery: axiosBaseQuery(),
+  refetchOnReconnect: true,
   endpoints: (builder) => ({
     fetchDishes: builder.query<Dish[], void>({
       query: () => ({ url: '/dishes', method: 'get' }),
