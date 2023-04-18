@@ -18,6 +18,10 @@ interface DishCardProps {
 const DishCard: React.FC<DishCardProps> = (props) => {
   const { dishData } = props;
   const dispatch = useDispatch();
+  const dishDataDescriptionEllipse =
+    dishData.description.length > 70
+      ? dishData.description.slice(0, 70) + '...'
+      : dishData.description;
 
   const handleSetCurrentDish = (dish: Dish): void => {
     dispatch(setCurrentDish(dish));
@@ -60,7 +64,7 @@ const DishCard: React.FC<DishCardProps> = (props) => {
             component="p"
             align="center"
           >
-            {dishData.description}
+            {dishDataDescriptionEllipse}
           </Typography>
         </CardContent>
       </CardActionArea>

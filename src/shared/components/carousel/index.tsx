@@ -1,13 +1,12 @@
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import ImageNotSupportedIcon from '@mui/icons-material/ImageNotSupported';
 import { Box, styled } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import React from 'react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import MyEmpty from '../empty';
@@ -29,7 +28,7 @@ const MyCarousel: React.FC<MyCarouselProps> = ({
   imagePaths,
   parentAltText
 }) => {
-  if (imagePaths != null) {
+  if (imagePaths != null && imagePaths.length > 0) {
     return (
       <Box
         sx={(theme) => ({
@@ -42,10 +41,9 @@ const MyCarousel: React.FC<MyCarouselProps> = ({
         })}
       >
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Pagination, Autoplay]}
           slidesPerView="auto"
           pagination={{ clickable: true }}
-          navigation
           autoplay
           grabCursor
         >

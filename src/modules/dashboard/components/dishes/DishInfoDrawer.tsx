@@ -4,11 +4,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { DISH_DRAWER_WIDTH } from '.';
-import { Dish } from '../../../../shared/@types/dish';
-import MyCarousel from '../../../../shared/components/carousel';
 import MyEmpty from '../../../../shared/components/empty';
 import { RootState } from '../../../../store/store';
 import AdminDrawHeader from '../layouts/AdminDrawHeader';
+import DishInfoContent from './DishInfoContent';
 
 const Drawer = styled(MuiDrawer)(() => ({
   display: 'block',
@@ -35,10 +34,6 @@ const DishInfoDrawer: React.FC = () => {
       {currentDish != null ? <DishInfoContent dishData={currentDish} /> : null}
     </Drawer>
   );
-};
-
-const DishInfoContent: React.FC<{ dishData: Dish }> = ({ dishData }) => {
-  return <MyCarousel parentAltText={dishData.name} imagePaths={dishData.images} />;
 };
 
 export default DishInfoDrawer;

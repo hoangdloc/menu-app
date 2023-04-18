@@ -24,7 +24,6 @@ export interface Dish {
   dishType: DishType
   cookingTime: number
   price: number
-  priceDiscount: number
   servings: number
   slug: string
   thumbnail: string
